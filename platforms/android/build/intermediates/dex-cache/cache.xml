@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\bodonnell\.android\build-cache\dd349dde5889a7d9984b3a39917354164a4d83f0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="746274223beb11b1cda7854d7eec3038695c2c93">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0\debug\classes_e16d74d2cf3903bdb5ed2c7c385c2fc04ecca648.jar" />
+    </item>
+
+</items>
