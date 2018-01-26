@@ -3,6 +3,7 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\app.modul
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\app.routing.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\main.aot.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\main.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\components\bundle\bundle.component.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\components\login\login.component.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\components\register\register.component.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\components\secure\secure.component.js
@@ -78,6 +79,9 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modul
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl-common.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-snackbar\snackbar.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-webview-interface\index-common.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-webview-interface\index.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-webview-interface\www\nativescript-webview-interface.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\bundle-entry-points.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application-common.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application.js
@@ -230,3 +234,4 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modul
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\utils\utils.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\xhr\xhr.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\xml\xml.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\webviews\index.common.js

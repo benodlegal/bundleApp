@@ -19,6 +19,7 @@ export class SecureComponent implements OnInit {
     
     public newBundle(){
     console.log("hello");
+    this.router.navigate(["/login"], { clearHistory: true });
     }
 
     public logout() {

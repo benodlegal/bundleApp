@@ -5,5 +5,6 @@
    <StackLayout>
         <Image src="~/bundledocs-logo.png" stretch="none" class="img-rounded "></Image>
     </StackLayout>
-    <Button class="bundleButton" text="+ New Bundle" (tap)="newBundle()"></Button>
+    
+    <Button class="bundleButton" [nsRouterLink]="['/bundle']" text="+ New Bundle" (tap)="newBundle()"></Button>
 </GridLayout>

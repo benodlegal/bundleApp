@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
-
+import * as webViewModule from "tns-core-modules/ui/web-view";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { SecureComponent } from "./components/secure/secure.component";
@@ -11,6 +11,8 @@ const routes: Routes = [
     { path: "login", component: LoginComponent },
     { path: "register", component: RegisterComponent },
     { path: "secure", component: SecureComponent }
+   
+    
 ];
 
 @NgModule({

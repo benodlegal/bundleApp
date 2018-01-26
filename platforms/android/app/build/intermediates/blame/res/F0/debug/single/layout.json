@@ -12,12 +12,12 @@
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\debug\\res\\layout\\exception_tab.xml"
     },
     {
-        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\a52ba51b3fb5cb5e2c8ad97356acc06f130a25aa\\output\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\bodonnell\\.android\\build-cache\\a52ba51b3fb5cb5e2c8ad97356acc06f130a25aa\\output\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\a52ba51b3fb5cb5e2c8ad97356acc06f130a25aa\\output\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\abc_alert_dialog_material.xml",
@@ -36,12 +36,12 @@
         "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\notification_action_tombstone.xml"
     },
     {
-        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\abc_screen_simple.xml",
         "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\abc_activity_chooser_view.xml",
@@ -56,12 +56,12 @@
         "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\notification_action.xml"
-    },
-    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\layout\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0\\debug\\layout\\abc_list_menu_item_icon.xml",

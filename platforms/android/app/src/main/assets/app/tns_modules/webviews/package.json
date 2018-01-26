@@ -1,0 +1,53 @@
+{
+  "_from": "webviews",
+  "_id": "webviews@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha1-kO/LheQb8yHdcnDRbd+gvtXzrH4=",
+  "_location": "/webviews",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "webviews",
+    "name": "webviews",
+    "escapedName": "webviews",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/webviews/-/webviews-1.0.1.tgz",
+  "_shasum": "90efcb85e41bf321dd7270d16ddfa0bed5f3ac7e",
+  "_spec": "webviews",
+  "_where": "C:\\Users\\bodonnell\\bundleApp",
+  "bundleDependencies": false,
+  "dependencies": {
+    "color": "^1.0.3",
+    "handlebars": "^4.0.10",
+    "nativescript-webview-interface": "^1.4.1"
+  },
+  "deprecated": false,
+  "description": "![WebViews Icon](http://i.imgur.com/Qwba5TC.png)",
+  "devDependencies": {
+    "dts-generator": "^2.1.0"
+  },
+  "main": "index.common.js",
+  "name": "webviews",
+  "nativescript": {
+    "id": "org.nativescript.webviews",
+    "tns-android": {
+      "version": "3.0.1"
+    },
+    "tns-ios": {
+      "version": "3.0.1"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "typings": "index.d.ts",
+  "version": "1.0.1"
+}

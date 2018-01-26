@@ -10,5 +10,14 @@
         sha1="746274223beb11b1cda7854d7eec3038695c2c93">
         <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0\debug\classes_e16d74d2cf3903bdb5ed2c7c385c2fc04ecca648.jar" />
     </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bodonnell\bundleApp\node_modules\nativescript-webview-interface\platforms\android\WebViewInterface.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="76c82949e18be2e64a13fcf1587898f426846790">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1\debug\WebViewInterface_eecba86f45899cac8c4a17bcc932ee6684ebf054.jar" />
+    </item>
 
 </items>

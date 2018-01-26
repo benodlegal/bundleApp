@@ -20,12 +20,15 @@
 		"@angular/platform-browser-dynamic": "~5.1.0",
 		"@angular/router": "~5.1.0",
 		"allow-publish": "^1.0.4",
+		"is-webview": "^1.0.1",
 		"nativescript-angular": "~5.1.0",
 		"nativescript-snackbar": "^2.0.0",
 		"nativescript-theme-core": "~1.0.4",
+		"passport-http-bearer": "^1.0.1",
 		"reflect-metadata": "~0.1.8",
 		"rxjs": "~5.5.2",
 		"tns-core-modules": "~3.4.0",
+		"webviews": "^1.0.1",
 		"zone.js": "~0.8.2"
 	},
 	"devDependencies": {
