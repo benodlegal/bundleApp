@@ -12,6 +12,7 @@ var LoginComponent = (function () {
             "email": "",
             "password": ""
         };
+
     }
     LoginComponent.prototype.webViewLoaded = function (args) {
         var webview = args.object;
