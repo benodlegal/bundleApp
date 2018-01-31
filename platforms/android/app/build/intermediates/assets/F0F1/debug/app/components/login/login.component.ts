@@ -2,10 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 import { SnackBar } from "nativescript-snackbar";
 import * as ApplicationSettings from "application-settings";
-import  *  as webViewModule from "tns-core-modules/ui/web-view";
+import *  as webViewModule from "tns-core-modules/ui/web-view";
 import { getViewById } from "tns-core-modules/ui/frame/frame";
 import { WebView, LoadEventData } from "ui/web-view";
 import { Page } from "ui/page";
+
 @Component({
     moduleId: module.id,
     selector: "ns-login",
@@ -13,8 +14,9 @@ import { Page } from "ui/page";
 })
 
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit{
     public input: any;
+    
     webViewLoaded(args){
         
         var webview:webViewModule.WebView = <webViewModule.WebView>args.object;
@@ -52,19 +54,19 @@ export class LoginComponent implements OnInit {
         }
         
     }
-    public login() {
-        if(this.input.email && this.input.password) {
-            let account = JSON.parse(ApplicationSettings.getString("account", "{}"));
-            if(this.input.email == account.email && this.input.password == account.password) {
-                ApplicationSettings.setBoolean("authenticated", true);
-                this.router.navigate(["/secure"], { clearHistory: true });
-            } else {
-                (new SnackBar()).simple("Incorrect Credentials!");
-            }
-        } else {
-            (new SnackBar()).simple("All Fields Required!");
-        }
-    }
+//   public login() {
+//         if(this.input.email && this.input.password) {
+//             let account = JSON.parse(ApplicationSettings.getString("account", "{}"));
+//             if(this.input.email == account.email && this.input.password == account.password) {
+//                 ApplicationSettings.setBoolean("authenticated", true);
+//                 this.router.navigate(["/secure"], { clearHistory: true });
+//             } else {
+//                 (new SnackBar()).simple("Incorrect Credentials!");
+//             }
+//         } else {
+//             (new SnackBar()).simple("All Fields Required!");
+//         }
+// } 
     
 
 }

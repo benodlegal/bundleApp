@@ -1,27 +1,29 @@
 {
-  "_from": "nativescript-webview-interface@^1.4.1",
+  "_from": "nativescript-webview-interface",
   "_id": "nativescript-webview-interface@1.4.2",
   "_inBundle": false,
   "_integrity": "sha512-WU1ineyxptr/sKIATuYSkf5q/iLhDHhLBH09viN+LTg4xCStTNm1qVvIzFCxSdlHdM8qlFzbpcPugPtp+HRszA==",
   "_location": "/nativescript-webview-interface",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "tag",
     "registry": true,
-    "raw": "nativescript-webview-interface@^1.4.1",
+    "raw": "nativescript-webview-interface",
     "name": "nativescript-webview-interface",
     "escapedName": "nativescript-webview-interface",
-    "rawSpec": "^1.4.1",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "^1.4.1"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
+    "#USER",
+    "/",
     "/webviews"
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-webview-interface/-/nativescript-webview-interface-1.4.2.tgz",
   "_shasum": "6559b46a8ac88026e111bdeb3690f59e5b98c329",
-  "_spec": "nativescript-webview-interface@^1.4.1",
-  "_where": "C:\\Users\\bodonnell\\bundleApp\\node_modules\\webviews",
+  "_spec": "nativescript-webview-interface",
+  "_where": "C:\\Users\\bodonnell\\bundleApp",
   "author": {
     "name": "Shripal Soni",
     "email": "shripalsoni04@gmail.com"
