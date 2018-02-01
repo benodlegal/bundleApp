@@ -1,3 +1,4 @@
+//All of the imports necessary for the login class
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
 import { WebView, LoadEventData } from "ui/web-view";
 import { RouterExtensions } from "nativescript-angular/router";
@@ -7,23 +8,25 @@ import *  as webViewModule from "tns-core-modules/ui/web-view";
 import { getViewById } from "tns-core-modules/ui/frame/frame";
 import { Page } from "ui/page";
 import {Router, NavigationExtras} from "@angular/router";
-
+let accessToken;
+//defining login component
 @Component({
     moduleId: module.id,
     selector: "ns-login",
     templateUrl: "login.component.html",
 })
-
+//Login component class that implements the 'AfterViewInit' import
 export class LoginComponent implements AfterViewInit{
-    
+    //Web view URL
     public myWebViewSrc: string = "https://app.bundledocs.com/auth/oauth2/authorize?response_type=token&client_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJTaWduYXR1cmUiOiIwYzE0ZmY0ZmU0ZGU0YTc5ODAxOTQ4OTMxMzIzYzIyYiIsIlBhcnRpdGlvbktleSI6IjEyNTE5OTcyMTQyMDYxNzk1MjgwXzUxNDU1M2Q0LWIxMzItNGU3OC1iZWExLWQyMjkwNjNjODNjNSIsIlJvd0tleSI6IjEyNTE4ODY1NTI1Mjc5NDc0OTM0Xzk1NzMzMmIwLWY2MjctNDRjYy1iMDk3LTM2NDhmNWRiNmYwYyJ9.qYi227w3Bbxpat7tppYdnF8rHbMX2c7ILMeidb9kdIo&redirect_uri=https://app.bundledocs.com/auth/oauth2/approval&state=user-id-from-my-application";
-    
+    //Constructor for the Router
     public constructor(private router: Router) {
        
     }
-    
     public MyValue: string = "noValue";
     myActualFunction(){
+        //router navigates to the secure server and passes in 
+        //the access token in the query perameter
         this.router.navigate(["/secure"], { queryParams: { accessToken: "myAccessToken" } });
     }
 
@@ -36,31 +39,42 @@ export class LoginComponent implements AfterViewInit{
             this.MyValue = myValue;
             this.myActualFunction();
         };
+        //getAccessToken method returns only the access token 
+        //this is done by reversing the url, splitting it by
+        //the acess_token= string to get rid of the start, then reversing it again
+        //and splitting with the & sign
         const getAccessToken = (url:string)=>{
-            //throw 'not an access token';
-           let accessToken = myValue.split(['&'][1])
-            return accessToken;
-        }
+          
+           try{
+            accessToken = url.split('access_token=').reverse().join('').split('&',1);
+            console.log(accessToken); 
+            console.log("------------------------------------"+
+            "-----------------------------------");
+            console.log("Below is the entire URL:");
+            console.log(url); 
+           }
+           catch(exception){
+            console.log('This is not an access token');
+           }
+           return accessToken;
+         }
+        //this gets called when the webview is loaded
         webview.on(WebView.loadFinishedEvent, function (args: LoadEventData) {
             let authenticationUrl = args.url;            
-            
-            console.log("authenticationUrl:");
-            console.log(authenticationUrl);            
-            
+            console.log("Below is the Access Token:");  
             try{
-                getAccessToken(authenticationUrl);
-                //myFunc(accessToken);
-            }catch{
-                //ignore
-            }            
+            getAccessToken(authenticationUrl);
+
+            }
+            catch(exception){
+                console.log("cannot get authenticationURL");
+            }           
         });              
     }
-   
-
+    //Called at runtime
     public ngOnInit() {            
         // setInterval(()=>{
         //     console.log(this.MyValue);
-        // }, 5000);    
-        
+        // }, 5000);        
     }    
 }
