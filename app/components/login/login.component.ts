@@ -4,11 +4,11 @@ import { WebView, LoadEventData } from "ui/web-view";
 import { RouterExtensions } from "nativescript-angular/router";
 import { SnackBar } from "nativescript-snackbar";
 import * as ApplicationSettings from "application-settings";
-import *  as webViewModule from "tns-core-modules/ui/web-view";
+import * as webViewModule from "tns-core-modules/ui/web-view";
 import { getViewById } from "tns-core-modules/ui/frame/frame";
 import { Page } from "ui/page";
 import {Router, NavigationExtras} from "@angular/router";
-let accessToken;
+//let accessToken;
 //defining login component
 @Component({
     moduleId: module.id,
@@ -24,47 +24,64 @@ export class LoginComponent implements AfterViewInit{
        
     }
     public MyValue: string = "noValue";
-    myActualFunction(){
-        //router navigates to the secure server and passes in 
+    myNavigation(accessToken:string){
+        //router navigates to the secure server and passes in
         //the access token in the query perameter
-        this.router.navigate(["/secure"], { queryParams: { accessToken: "myAccessToken" } });
+        this.router.navigate(["/secure"], { queryParams: { accessToken: accessToken } });
     }
 
     @ViewChild("myWebView") webViewRef: ElementRef;    
     ngAfterViewInit() {
         let webview: WebView = this.webViewRef.nativeElement;                
-        let myValue: string = "myValue";
-        const myFunc = (theirValue:string)=>{
-            myValue = theirValue
-            this.MyValue = myValue;
-            this.myActualFunction();
-        };
+        let myValue: string = "myValue"; 
+
         //getAccessToken method returns only the access token 
         //this is done by reversing the url, splitting it by
         //the acess_token= string to get rid of the start, then reversing it again
         //and splitting with the & sign
-        const getAccessToken = (url:string)=>{
-          
-           try{
-            accessToken = url.split('access_token=').reverse().join('').split('&',1);
-            console.log(accessToken); 
-            console.log("------------------------------------"+
-            "-----------------------------------");
-            console.log("Below is the entire URL:");
-            console.log(url); 
-           }
-           catch(exception){
-            console.log('This is not an access token');
-           }
-           return accessToken;
-         }
+        const getAccessToken = (url: string) => {
+            let accessToken: string = "";
+
+            if (!isAccessTokenInUrl(url)) {
+                throw "give me a url that has an access token";
+            }
+            
+            let accessTokenPartOne: string[] = url.split('access_token=');
+            let accessTokenPartOneReverse: string[] = accessTokenPartOne.reverse();
+            accessToken = accessTokenPartOneReverse.join('').split('&', 1)[0];
+
+            console.log(accessToken);
+            console.log("------------------------------------");            
+
+            return accessToken;
+        }
+         
+        const isAccessTokenInUrl = (url: string) => {
+            //test for access token
+            return (url.indexOf("access_token") >-1);                        
+        }
+        
+        const navigateToSecureComponent = (accessToken: string) => {
+            //test for access token
+            
+            this.myNavigation(accessToken);            
+        }
+
         //this gets called when the webview is loaded
         webview.on(WebView.loadFinishedEvent, function (args: LoadEventData) {
             let authenticationUrl = args.url;            
-            console.log("Below is the Access Token:");  
+           
             try{
-            getAccessToken(authenticationUrl);
+                //test for existance of the access token in the url
+                var isInUrl:boolean = isAccessTokenInUrl(authenticationUrl);
 
+                if(isInUrl){
+                    //when an access token is in the url
+                    var accessToken = getAccessToken(authenticationUrl);
+                
+                    //navigate router to secure component with our access token
+                    navigateToSecureComponent(accessToken);                
+                }
             }
             catch(exception){
                 console.log("cannot get authenticationURL");
@@ -73,8 +90,6 @@ export class LoginComponent implements AfterViewInit{
     }
     //Called at runtime
     public ngOnInit() {            
-        // setInterval(()=>{
-        //     console.log(this.MyValue);
-        // }, 5000);        
+         
     }    
 }

@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { RouterExtensions} from "nativescript-angular/router";
 import * as ApplicationSettings from "application-settings";
 import {ActivatedRoute} from "@angular/router";
+import * as textViewModule from "tns-core-modules/ui/text-view";
+import { Page } from "ui/page";
+
 @Component({
     moduleId: module.id,
     selector: "ns-secure",
@@ -9,10 +12,11 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SecureComponent implements OnInit {
     public accessToken: string;
+    public onceLoggedInSrc: string; //TODO
 
     public constructor(private route: ActivatedRoute) { 
         this.route.queryParams.subscribe(params => {
-            this.accessToken = params["accessToken"];
+        this.accessToken = params["accessToken"];
             
         });
     }
@@ -25,7 +29,7 @@ export class SecureComponent implements OnInit {
         }
     }
     public newBundle(){
-    console.log("hello");
+        console.log("hello");
     //this.router.navigate(["/login"], { clearHistory: true });
     }
 
