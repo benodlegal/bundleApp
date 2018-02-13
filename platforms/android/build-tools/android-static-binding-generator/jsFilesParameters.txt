@@ -3,6 +3,9 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\app.modul
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\app.routing.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\main.aot.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\main.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\auth\auth.service.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\auth\jwt.interceptor.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\auth\token.interceptor.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\components\bundle\bundle.component.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\components\login\login.component.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\components\register\register.component.js
@@ -11,6 +14,8 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\item
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\item.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\item.service.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\items.component.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\ping\ping.component.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\services\BundledocsApi\BundledocsUserService.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\common.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\dom-adapter.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\element-registry.js
@@ -78,6 +83,7 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modul
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\index.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl-common.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-localstorage\localstorage.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-snackbar\snackbar.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-webview-interface\index-common.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-webview-interface\index.js

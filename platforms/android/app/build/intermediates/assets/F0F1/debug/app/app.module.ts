@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { SecureComponent } from "./components/secure/secure.component";
+import 'nativescript-localstorage';
 
 @NgModule({
     bootstrap: [

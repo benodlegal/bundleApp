@@ -4,12 +4,20 @@
         "directory": "..\\..\\node_modules\\nativescript-angular"
     },
     {
+        "name": "nativescript-localstorage",
+        "directory": "..\\..\\node_modules\\nativescript-localstorage"
+    },
+    {
         "name": "nativescript-snackbar",
         "directory": "..\\..\\node_modules\\nativescript-snackbar"
     },
     {
         "name": "nativescript-theme-core",
         "directory": "..\\..\\node_modules\\nativescript-theme-core"
+    },
+    {
+        "name": "nativescript-webview-interface",
+        "directory": "..\\..\\node_modules\\nativescript-webview-interface"
     },
     {
         "name": "tns-core-modules",
@@ -22,9 +30,5 @@
     {
         "name": "tns-core-modules-widgets",
         "directory": "..\\..\\node_modules\\tns-core-modules-widgets"
-    },
-    {
-        "name": "nativescript-webview-interface",
-        "directory": "..\\..\\node_modules\\nativescript-webview-interface"
     }
 ]

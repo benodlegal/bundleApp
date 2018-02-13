@@ -1,10 +1,10 @@
-<ActionBar title="Bundledocs">
-    <ActionItem text="Logout" ios.position="true" (tap)="logout()"></ActionItem>
-</ActionBar>
-
 <GridLayout backgroundColor="#CCCCCC" rows="auto, *">
-        <ScrollView>
-          <label #myAccess [src]="accessToken"></label> 
-          <label text = "hello world"></label>
-        </ScrollView>
+
+    <StackLayout>        
+        <Button [nsRouterLink]="['/secure']" class="link" text="Secure"></Button>
+        <Button [nsRouterLink]="['/login']" class="link" text="Login"></Button>  
+        <HtmlView [html]="htmlAccessToken" ></HtmlView>
+        <HtmlView [html]="htmlUsersToken" ></HtmlView>
+        <!--//show the users email address-->
+    </StackLayout>    
 </GridLayout>
