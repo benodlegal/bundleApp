@@ -4,21 +4,21 @@ import { TokenInterceptor } from './auth/token.interceptor';
 import { NgModule } from '@angular/core';
 
 @Component({
-    selector: "ns-app",
-    templateUrl: "app.component.html",
+  selector: "ns-app",
+  templateUrl: "app.component.html",
 })
 export class AppComponent { }
 
 @NgModule({
-    bootstrap: [AppComponent],
-    imports: [],
-    providers: [
-      {
-        provide: HTTP_INTERCEPTORS,
-        useClass: TokenInterceptor,
-        multi: true
-      }
-    ]
-  })
-  export class AppModule {}
+  bootstrap: [AppComponent],
+  imports: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ]
+})
+export class AppModule { }
 

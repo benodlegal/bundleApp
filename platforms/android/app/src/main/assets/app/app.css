@@ -1,1 +1,13 @@
 @import '~nativescript-theme-core/css/core.light.css';
+/* .action1 {
+    background-color: white;
+    color: white;
+    margin-right: 15;
+    margin-left: 15;
+    margin:transparent;
+} */
+
+ActionBar {
+    background-color:  #3C5AFD;
+    color: white;
+}

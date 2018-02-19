@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-xhdpi\\burgericon.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\burgericon.png"
+    },
+    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-xhdpi\\icon.png",
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\icon.png"
     },

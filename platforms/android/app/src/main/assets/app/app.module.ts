@@ -3,7 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
-import {AuthService} from "./auth/auth.service"
+import { AuthService } from "./auth/auth.service"
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { SecureComponent } from "./components/secure/secure.component";
@@ -38,12 +38,12 @@ import { BundledocsUserService } from "./services/BundledocsApi/BundledocsUserSe
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptor,
             multi: true
-          },
-          BundledocsUserService
-       
+        },
+        BundledocsUserService
+
     ],
     schemas: [
         NO_ERRORS_SCHEMA
-     ]
+    ]
 })
 export class AppModule { }

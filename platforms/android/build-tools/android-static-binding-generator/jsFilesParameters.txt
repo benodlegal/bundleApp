@@ -14,6 +14,10 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\item
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\item.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\item.service.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\item\items.component.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\model\AppBaseModel.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\model\AppBundle.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\model\AppResponseUser.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\model\AppUser.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\ping\ping.component.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\services\BundledocsApi\BundledocsUserService.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\common.js

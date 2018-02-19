@@ -4,6 +4,10 @@
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\icon.png"
     },
     {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-ldpi\\burgericon.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\burgericon.png"
+    },
+    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-ldpi\\logo.png",
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\logo.png"
     },
