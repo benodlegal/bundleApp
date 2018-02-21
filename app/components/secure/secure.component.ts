@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, OnDestroy, Injectable } from "@angular/core";
+import { Component, ChangeDetectionStrategy, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, OnDestroy, Injectable, Input, Output } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 import { GestureTypes, GestureEventData } from "ui/gestures";
 import * as ApplicationSettings from "application-settings";
@@ -13,47 +13,61 @@ import { HttpClient } from '@angular/common/http';
 import { BundledocsUserService } from '../../services/BundledocsApi/BundledocsUserService';
 import { EventData, Observable } from "data/observable";
 import { View } from "ui/core/view";
+import { SearchBar } from "ui/search-bar";
+import { SetupItemViewArgs } from "nativescript-angular/directives";
+import * as buttonModule from "tns-core-modules/ui/button";
+import * as bindable from "tns-core-modules/ui/core/bindable";
+import * as observable from "tns-core-modules/data/observable";
+import * as dialogs from "ui/dialogs";
 
-export function logout() {
-    // ApplicationSettings.remove("authenticated");
-    // this._router.navigate(["/login"], { clearHistory: true });
-    // localStorage.setItem('accessToken', null);
-    console.log('you clicked logout');
-};
-
-export function showSideDrawer(args:EventData) {
+export function showSideDrawer(args: EventData) {
     console.log("Show SideDrawer tapped.");
     // Show sidedrawer ...
 }
 @Component({
     moduleId: module.id,
     selector: "ns-secure",
-    templateUrl: "secure.component.html"
+    templateUrl: "secure.component.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 @Injectable()
 
 export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
+    @Input() row;
+
     public accessToken: string;
     public onceLoggedInSrc: string; //TODO
     public htmlAccessToken: string;
     public htmlUsersToken: string;
     public appUser: AppUser;
-    public constructor(private _router: Router, private _activatedRoute: ActivatedRoute, private cdRef: ChangeDetectorRef, public _http: HttpClient) {
-        this._activatedRoute.queryParams.subscribe(params => {
-            this.accessToken = params["accessToken"];
-            this.htmlAccessToken = 'your access Token is ' + this.accessToken;
-            _http.get<AppResponseUser>('https://app.bundledocs.com/api/v1/users/me')
-                .subscribe(
-                    data => {
-                        this.htmlUsersToken = 'your email is ' + data.data[0].Email;
-                    },
-                    err => console.log(err)
-                );
+    public searchPhrase: string;
+    public myList: MyList = new MyList();
 
-            return this.htmlAccessToken;
-        });
+    public constructor(private _router: RouterExtensions, private _activatedRoute: ActivatedRoute, private cdRef: ChangeDetectorRef, private _http: HttpClient) {
+
     }
+    load() {
+        console.log("load()");
+
+        this._http.get<AppResponseUser>('https://app.bundledocs.com/api/v1/users/me')
+            .subscribe(
+                data => {
+                    this.htmlUsersToken = 'your email is ' + data.data[0].Email;
+                }, 
+                err => console.log(err)
+            );
+    }
+    public onSubmit(args) {
+        let searchBar = <SearchBar>args.object;
+        alert("You are searching for " + searchBar.text);
+    }
+
+    public onTextChanged(args) {
+        let searchBar = <SearchBar>args.object;
+        console.log("SearchBar text changed! New value: " + searchBar.text);
+    }
+
     ngAfterViewInit() {
         console.log('accessToken3');
     }
@@ -66,4 +80,87 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         console.log('ngOnDestroy called in secure');
     }
 
+    logout() {
+        // ApplicationSettings.remove("authenticated");
+        // this._router.navigate(["/login"], { clearHistory: true });
+        // localStorage.setItem('accessToken', null);
+        console.log('you clicked logout');
+    }
+    newBundle() {
+        dialogs.prompt({
+            title: "New Bundle",
+            message: "Code(eg. ABC20/1)",
+            cancelButtonText: "Cancel",
+            okButtonText: "Create",
+            neutralButtonText: "Ok"
+        }).then(r => {
+            console.log("Dialog result: " + r.result + ", user: " + r.text);
+
+        });
+    }
+
+
+}
+class Bundle {
+    constructor(public id: number, public name: string, public age: number) {
+
+    }
+}
+export class MyList {
+    bundle: Bundle[];
+    constructor() {
+        this.bundle = [
+            {
+                id: 0,
+                name: 'Michael Smith',
+                age: 25
+            },
+
+            {
+                id: 1,
+                name: 'Paul McCarthy',
+                age: 36
+            },
+
+            {
+                id: 2,
+                name: 'Mary O Driscoll',
+                age: 19
+            },
+            {
+                id: 3,
+                name: 'John Doe',
+                age: 56
+            },
+
+            {
+                id: 4,
+                name: 'Ross Petter',
+                age: 43
+            },
+
+            {
+                id: 5,
+                name: 'Barry O Connor',
+                age: 19
+            },
+            {
+                id: 6,
+                name: 'Julie Burke',
+                age: 60
+            },
+
+            {
+                id: 7,
+                name: 'Mark Stud',
+                age: 26
+            },
+
+            {
+                id: 8,
+                name: 'Jim Burnes',
+                age: 39
+            },
+        ]
+    }
 }

@@ -6,8 +6,26 @@
     margin-left: 15;
     margin:transparent;
 } */
-
 ActionBar {
-    background-color:  #3C5AFD;
+    background-color:  #62A5E2;
     color: white;
+}
+
+.myBundleButton{
+    margin-right:70%;
+    background-color:#62A5E2;
+    color:white;
+    margin-left: 5;
+    font-weight: bold;
+}
+
+.show-bundles{
+    font-size: 20em;
+    margin:8;
+    color:black;
+    border: 5em solid;
+}
+
+.popups{
+    src: "res://hamburger.png"
 }

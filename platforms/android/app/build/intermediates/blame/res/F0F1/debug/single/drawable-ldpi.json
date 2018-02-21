@@ -8,11 +8,19 @@
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\burgericon.png"
     },
     {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-ldpi\\hamburger.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\hamburger.png"
+    },
+    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-ldpi\\logo.png",
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\logo.png"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-ldpi\\background.png",
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\background.png"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1\\debug\\drawable-ldpi\\bundlelogo.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\bundlelogo.png"
     }
 ]

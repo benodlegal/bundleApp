@@ -8,8 +8,6 @@ export class BundledocsUserService {
     constructor(private http: HttpClient) { }
 
     me() {
-        this.userMe = this.http.get("https://app.bundledocs.com/api/v1/users/me");
-        return this.userMe;
-
+        return this.http.get("https://app.bundledocs.com/api/v1/users/me");
     }
 }
