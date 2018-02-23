@@ -88,6 +88,8 @@ C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modul
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl-common.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-localstorage\localstorage.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-pulltorefresh\pulltorefresh-common.js
+C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-pulltorefresh\pulltorefresh.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-snackbar\snackbar.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-webview-interface\index-common.js
 C:\Users\bodonnell\bundleApp\platforms\android\app\src\main\assets\app\tns_modules\nativescript-webview-interface\index.js

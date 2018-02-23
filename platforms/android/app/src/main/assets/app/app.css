@@ -1,13 +1,6 @@
 @import '~nativescript-theme-core/css/core.light.css';
-/* .action1 {
-    background-color: white;
-    color: white;
-    margin-right: 15;
-    margin-left: 15;
-    margin:transparent;
-} */
 ActionBar {
-    background-color:  #62A5E2;
+    background-color:light-gray;
     color: white;
 }
 
@@ -15,8 +8,18 @@ ActionBar {
     margin-right:70%;
     background-color:#62A5E2;
     color:white;
-    margin-left: 5;
     font-weight: bold;
+    height: 60;
+    width:100;
+}
+.myHelpButton{
+    margin-left:75%;
+    background-color: #DEA026;
+    color:white;
+    font-weight: bold;
+    font-size: 28em;
+    height: 60;
+    width:60;
 }
 
 .show-bundles{
@@ -30,4 +33,25 @@ ActionBar {
     margin-top:5;
     margin-left: 20;
     margin-right: 35;
+}
+.bundle-title{
+    margin-left:0%;
+    font-weight:bold;
+    margin-top:10;
+}
+
+.bundle-code{
+    margin-left:50%;
+    margin-top:10;
+    font-weight:bold;
+}
+
+.editBundleButton{
+    margin-left:80%;
+    background-color:#62A5E2;
+    color:white;
+    font-weight: bold;
+    font-size: 20em;
+    height: 45;
+    width:45;
 }

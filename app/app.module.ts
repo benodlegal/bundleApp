@@ -40,7 +40,6 @@ import { BundledocsUserService } from "./services/BundledocsApi/BundledocsUserSe
             multi: true
         },
         BundledocsUserService
-
     ],
     schemas: [
         NO_ERRORS_SCHEMA

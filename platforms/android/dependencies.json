@@ -8,6 +8,10 @@
         "directory": "..\\..\\node_modules\\nativescript-localstorage"
     },
     {
+        "name": "nativescript-pulltorefresh",
+        "directory": "..\\..\\node_modules\\nativescript-pulltorefresh"
+    },
+    {
         "name": "nativescript-snackbar",
         "directory": "..\\..\\node_modules\\nativescript-snackbar"
     },

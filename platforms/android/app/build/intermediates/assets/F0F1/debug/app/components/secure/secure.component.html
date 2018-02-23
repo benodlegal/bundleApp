@@ -15,7 +15,7 @@
         <Button [nsRouterLink]="['/login']" class="link" text="Login"></Button> 
         <HtmlView [html]="htmlAccessToken"></HtmlView>
         <HtmlView [html]="htmlUsersToken"></HtmlView> -->
-    <Image src="res://bundlelogo"></Image>
+    <Image src="res://bundlelogo" class = "logo"></Image>
     <SearchBar hint="Search For Bundle" [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
         color="white" textFieldBackgroundColor="lightgray" textFieldHintColor="white"></SearchBar>
 

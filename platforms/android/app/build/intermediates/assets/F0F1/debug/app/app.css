@@ -26,6 +26,8 @@ ActionBar {
     border: 5em solid;
 }
 
-.popups{
-    src: "res://hamburger.png"
+.logo{
+    margin-top:5;
+    margin-left: 20;
+    margin-right: 35;
 }

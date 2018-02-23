@@ -40,24 +40,25 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
     public onceLoggedInSrc: string; //TODO
     public htmlAccessToken: string;
     public htmlUsersToken: string;
-    public appUser: AppUser;
+    public bdUser: AppUser;
+    public bdUserBundles: AppBundle[];
     public searchPhrase: string;
-    public myList: MyList = new MyList();
+    public myList: MyList;
 
-    public constructor(private _router: RouterExtensions, private _activatedRoute: ActivatedRoute, private cdRef: ChangeDetectorRef, private _http: HttpClient) {
+    public constructor(private _router: RouterExtensions, private _activatedRoute: ActivatedRoute, private cdRef: ChangeDetectorRef, private _bdUserService: BundledocsUserService) {
 
     }
-    load() {
-        console.log("load()");
 
-        this._http.get<AppResponseUser>('https://app.bundledocs.com/api/v1/users/me')
-            .subscribe(
-                data => {
-                    this.htmlUsersToken = 'your email is ' + data.data[0].Email;
-                }, 
+    load(args) {
+        this._bdUserService.me().subscribe(
+                data => {   
+                    this.bdUser = data.data[0];                    
+                    this.bdUserBundles = this.bdUser.Briefs;
+                    this.htmlUsersToken = data.data[0].Email;
+                },
                 err => console.log(err)
             );
-    }
+    } 
     public onSubmit(args) {
         let searchBar = <SearchBar>args.object;
         alert("You are searching for " + searchBar.text);
@@ -86,6 +87,11 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         // localStorage.setItem('accessToken', null);
         console.log('you clicked logout');
     }
+
+    help(){
+        console.log('help.....');
+       //TODO
+    }
     newBundle() {
         dialogs.prompt({
             title: "New Bundle",
@@ -95,12 +101,12 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
             neutralButtonText: "Ok"
         }).then(r => {
             console.log("Dialog result: " + r.result + ", user: " + r.text);
-
         });
     }
 
 
 }
+
 class Bundle {
     constructor(public id: number, public name: string, public age: number) {
 

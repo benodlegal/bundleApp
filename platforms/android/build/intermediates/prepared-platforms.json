@@ -14,6 +14,7 @@
     "is-webview": true,
     "nativescript-angular": true,
     "nativescript-localstorage": true,
+    "nativescript-pulltorefresh": true,
     "nativescript-snackbar": true,
     "nativescript-theme-core": true,
     "nativescript-webview-interface": true,

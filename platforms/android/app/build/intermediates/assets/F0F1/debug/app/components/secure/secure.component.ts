@@ -54,7 +54,7 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
             .subscribe(
                 data => {
                     this.htmlUsersToken = 'your email is ' + data.data[0].Email;
-                },
+                }, 
                 err => console.log(err)
             );
     }
