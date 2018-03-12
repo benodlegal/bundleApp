@@ -28,6 +28,7 @@
 		"nativescript-pulltorefresh": "^2.1.0",
 		"nativescript-snackbar": "^2.0.0",
 		"nativescript-theme-core": "~1.0.4",
+		"nativescript-ui-listview": "^3.5.1",
 		"nativescript-webview-interface": "^1.4.2",
 		"passport-http-bearer": "^1.0.1",
 		"reflect-metadata": "~0.1.8",

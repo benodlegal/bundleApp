@@ -12,6 +12,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\bodonnell\.android\build-cache\7e2f8982cf19771b53508504a7d2d9a92c6e52c9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="83f711d70ef9ce041ead02bc16e944130c58d05a">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2\debug\classes_0242847c80d8a83ad636bddbcff8bf52a24a1583.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bodonnell\.android\build-cache\6546c1a54e28631a6952d0016e784e20e52af5d3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9b5a7bd266567dc83b7f0dd42fc36b08bed3ac19">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2\debug\classes_7b6e728f4aab8457d3c5217f5d8d13410de24c58.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\bodonnell\bundleApp\node_modules\nativescript-webview-interface\platforms\android\WebViewInterface.jar"
         jumboMode="false"
         optimize="true"

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2\\debug\\drawable-hdpi\\background.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\background.png"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2\\debug\\drawable-hdpi\\logo.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2\\debug\\drawable-hdpi\\hamburger.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\hamburger.png"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2\\debug\\drawable-hdpi\\bundlelogo.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\bundlelogo.png"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2\\debug\\drawable-hdpi\\icon.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2\\debug\\drawable-hdpi\\burgericon.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\burgericon.png"
+    }
+]

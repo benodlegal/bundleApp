@@ -1,11 +1,11 @@
 <ActionBar title="Bundledocs">
     <Image src="res://bundlelogo" class="logo"></Image>
-    <ActionItem android.position="popup" [text]="htmlUsersToken"></ActionItem>
-    <ActionItem android.position="popup" text="Home"></ActionItem>
+    <ActionItem android.position="popup" [text]="htmlUsersToken" (tap)="openGmail()"></ActionItem>
+    <ActionItem android.position="popup" [nsRouterLink]="['/login']" class="link" text="Home"></ActionItem>
     <ActionItem android.position="popup" text="Account Settings"></ActionItem>
     <ActionItem android.position="popup" text="Upgrade & Billing"></ActionItem>
     <ActionItem android.position="popup" text="Groups & Sharing"></ActionItem>
-    <ActionItem android.position="popup" text="Manual"></ActionItem>
+    <ActionItem android.position="popup" text="Manual" (tap)="openManual()"></ActionItem>
     <ActionItem android.position="popup" text="Sign Out" (tap)="logout()"></ActionItem>
 </ActionBar>
 
@@ -14,27 +14,25 @@
         <Button [nsRouterLink]="['/login']" class="link" text="Login"></Button>  -->
     <!-- <HtmlView [html]="htmlAccessToken"></HtmlView>
     <HtmlView [html]="htmlUsersToken"></HtmlView> -->
-    <SearchBar hint="Search For Bundle" [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
+    <SearchBar #txtSearchPhrase hint="Search For Bundle" [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
         color="white" textFieldBackgroundColor="lightgray" textFieldHintColor="white"></SearchBar>
-
-    <AbsoluteLayout>
+    <!-- <AbsoluteLayout>
         <Button class="myBundleButton" (tap)="newBundle()" text="+ New Bundle"></Button>
         <Button class="myHelpButton" (tap)="help()" text="?"></Button>
-    </AbsoluteLayout>
-
+    </AbsoluteLayout> -->
     <Label text="Bundles" class="show-bundles">
 
     </Label>
-    <ListView [row]="row" [items]="bdUserBundles" (loaded)="load($event)" class="list-group">
-        <ng-template let-item="item">
-            <StackLayout class="list-group-item">
-                <AbsoluteLayout>
-                    <Label class = "bundle-title" [text]="item.Title"></Label>
-                    <Label class = "bundle-code" [text]="item.Code"></Label>
-                    <Button class="editBundleButton" (tap)="help()" text="&#9998;"></Button>
-                </AbsoluteLayout>
-            </StackLayout>
-        </ng-template>
-
-    </ListView>
+    <RadListView #lstBundles [row]="row"  (loaded)="ngAfterViewInit()" [items]="bdUserBundles" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
+            <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <AbsoluteLayout>
+                            <Label class="bundle-title" [text]="item.Title"></Label>
+                            <Label class="bundle-code" [text]="item.Code"></Label>
+                            <Button class="editBundleButton" (tap)="editBundle(item)" text="&#9998;"></Button>
+                            <Label class="bundle-date" [text]="item.Created"></Label>
+                        </AbsoluteLayout>
+                    </StackLayout>
+                </ng-template>
+    </RadListView>
 </StackLayout>

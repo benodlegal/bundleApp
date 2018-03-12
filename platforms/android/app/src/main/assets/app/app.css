@@ -1,11 +1,11 @@
 @import '~nativescript-theme-core/css/core.light.css';
 ActionBar {
-    background-color:light-gray;
     color: white;
 }
 
 .myBundleButton{
     margin-right:70%;
+    margin-left:5;
     background-color:#62A5E2;
     color:white;
     font-weight: bold;
@@ -44,6 +44,9 @@ ActionBar {
     margin-left:50%;
     margin-top:10;
     font-weight:bold;
+}
+.bundle-date{
+    margin-top:30;
 }
 
 .editBundleButton{

@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, OnDestroy, Injectable, Input, Output } from "@angular/core";
+import { Component, NgZone, ChangeDetectionStrategy, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, OnDestroy, Injectable, Input, Output } from "@angular/core";
+import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { RouterExtensions } from "nativescript-angular/router";
 import { GestureTypes, GestureEventData } from "ui/gestures";
 import * as ApplicationSettings from "application-settings";
@@ -19,6 +20,8 @@ import * as buttonModule from "tns-core-modules/ui/button";
 import * as bindable from "tns-core-modules/ui/core/bindable";
 import * as observable from "tns-core-modules/data/observable";
 import * as dialogs from "ui/dialogs";
+import * as utils from "utils/utils";
+import { ListViewEventData } from "nativescript-ui-listview";
 
 export function showSideDrawer(args: EventData) {
     console.log("Show SideDrawer tapped.");
@@ -35,30 +38,24 @@ export function showSideDrawer(args: EventData) {
 
 export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
     @Input() row;
-
     public accessToken: string;
     public onceLoggedInSrc: string; //TODO
     public htmlAccessToken: string;
     public htmlUsersToken: string;
     public bdUser: AppUser;
-    public bdUserBundles: AppBundle[];
+    public bdUserBundles: ObservableArray<AppBundle>;
     public searchPhrase: string;
     public myList: MyList;
 
-    public constructor(private _router: RouterExtensions, private _activatedRoute: ActivatedRoute, private cdRef: ChangeDetectorRef, private _bdUserService: BundledocsUserService) {
-
+    public constructor(
+        private _router: RouterExtensions, 
+        private _activatedRoute: ActivatedRoute, 
+        private cdRef: ChangeDetectorRef, 
+        private _bdUserService: BundledocsUserService, 
+        private _ngZone: NgZone,
+        private _changeDetectionRef: ChangeDetectorRef) {
     }
-
-    load(args) {
-        this._bdUserService.me().subscribe(
-                data => {   
-                    this.bdUser = data.data[0];                    
-                    this.bdUserBundles = this.bdUser.Briefs;
-                    this.htmlUsersToken = data.data[0].Email;
-                },
-                err => console.log(err)
-            );
-    } 
+  
     public onSubmit(args) {
         let searchBar = <SearchBar>args.object;
         alert("You are searching for " + searchBar.text);
@@ -69,14 +66,42 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         console.log("SearchBar text changed! New value: " + searchBar.text);
     }
 
+    @ViewChild("txtSearchPhrase") txtSearchPhrase: ElementRef;
+    @ViewChild("lstBundles") lstBundles: ElementRef;
+ 
+  
     ngAfterViewInit() {
+        try {
+            console.log('load was called');
+
+            //leave the below
+            let searchPhrase: SearchBar = this.txtSearchPhrase.nativeElement;            
+            searchPhrase.text = " ";
+            searchPhrase.text = "";
+        } catch (e) {
+            console.log(JSON.stringify(e));
+        }
         console.log('accessToken3');
     }
 
     ngOnInit() {
+        this.initDataItems();
+        this._changeDetectionRef.detectChanges();
         console.log('ngOnInit called in secure');
     }
-
+    private initDataItems() {
+        this.bdUserBundles = new ObservableArray<AppBundle>();
+        //subscribe to the data
+        this._bdUserService.me().subscribe(data => {
+            this.bdUser = data.data[0];
+           this.bdUserBundles = this.bdUser.Briefs;
+            this.htmlUsersToken = data.data[0].Email;
+        },
+        err => console.log(err)
+    );
+        //push each data item onto the obserbvable array
+        this._bdUserService.push(this.bdUserBundles);
+    }
     ngOnDestroy() {
         console.log('ngOnDestroy called in secure');
     }
@@ -88,10 +113,11 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         console.log('you clicked logout');
     }
 
-    help(){
+    help() {
         console.log('help.....');
-       //TODO
+        //TODO
     }
+
     newBundle() {
         dialogs.prompt({
             title: "New Bundle",
@@ -104,7 +130,16 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         });
     }
 
-
+    editBundle(bundle:AppBundle) {
+        utils.openUrl("https://app.bundledocs.com/api/v1/bundles/" + bundle.PartitionKey
+        +"/" + bundle.RowKey +"/download?Bearer=" + localStorage.getItem('accessToken'));
+    }
+    openGmail(){
+        utils.openUrl("https://gmail.com/");
+    }
+    openManual(){
+        utils.openUrl("https://app.bundledocs.com/bundledocs-app-user-manual");
+    }
 }
 
 class Bundle {
@@ -116,57 +151,7 @@ export class MyList {
     bundle: Bundle[];
     constructor() {
         this.bundle = [
-            {
-                id: 0,
-                name: 'Michael Smith',
-                age: 25
-            },
-
-            {
-                id: 1,
-                name: 'Paul McCarthy',
-                age: 36
-            },
-
-            {
-                id: 2,
-                name: 'Mary O Driscoll',
-                age: 19
-            },
-            {
-                id: 3,
-                name: 'John Doe',
-                age: 56
-            },
-
-            {
-                id: 4,
-                name: 'Ross Petter',
-                age: 43
-            },
-
-            {
-                id: 5,
-                name: 'Barry O Connor',
-                age: 19
-            },
-            {
-                id: 6,
-                name: 'Julie Burke',
-                age: 60
-            },
-
-            {
-                id: 7,
-                name: 'Mark Stud',
-                age: 26
-            },
-
-            {
-                id: 8,
-                name: 'Jim Burnes',
-                age: 39
-            },
+         
         ]
     }
 }
