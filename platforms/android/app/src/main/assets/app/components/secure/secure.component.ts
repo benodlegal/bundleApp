@@ -43,19 +43,23 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
     public htmlAccessToken: string;
     public htmlUsersToken: string;
     public bdUser: AppUser;
-    public bdUserBundles: ObservableArray<AppBundle>;
+    private _bdUserBundles: ObservableArray<AppBundle>;
     public searchPhrase: string;
     public myList: MyList;
 
+    get bdUserBundles(): ObservableArray<AppBundle> {
+        return this._bdUserBundles;
+    }
+
     public constructor(
-        private _router: RouterExtensions, 
-        private _activatedRoute: ActivatedRoute, 
-        private cdRef: ChangeDetectorRef, 
-        private _bdUserService: BundledocsUserService, 
+        private _router: RouterExtensions,
+        private _activatedRoute: ActivatedRoute,
+        private cdRef: ChangeDetectorRef,
+        private _bdUserService: BundledocsUserService,
         private _ngZone: NgZone,
         private _changeDetectionRef: ChangeDetectorRef) {
     }
-  
+
     public onSubmit(args) {
         let searchBar = <SearchBar>args.object;
         alert("You are searching for " + searchBar.text);
@@ -68,14 +72,13 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
 
     @ViewChild("txtSearchPhrase") txtSearchPhrase: ElementRef;
     @ViewChild("lstBundles") lstBundles: ElementRef;
- 
-  
+
     ngAfterViewInit() {
         try {
             console.log('load was called');
 
             //leave the below
-            let searchPhrase: SearchBar = this.txtSearchPhrase.nativeElement;            
+            let searchPhrase: SearchBar = this.txtSearchPhrase.nativeElement;
             searchPhrase.text = " ";
             searchPhrase.text = "";
         } catch (e) {
@@ -90,17 +93,22 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         console.log('ngOnInit called in secure');
     }
     private initDataItems() {
-        this.bdUserBundles = new ObservableArray<AppBundle>();
+        this._bdUserBundles = new ObservableArray<AppBundle>();
         //subscribe to the data
-        this._bdUserService.me().subscribe(data => {
-            this.bdUser = data.data[0];
-           this.bdUserBundles = this.bdUser.Briefs;
-            this.htmlUsersToken = data.data[0].Email;
+        this._bdUserService.me().subscribe(response => {
+            this.bdUser = response.data[0];
+            this.htmlUsersToken = response.data[0].Email;
+            for (let i=0; i <= this.bdUser.Briefs.length; i++) {
+                let currentBrief = this.bdUser.Briefs[i];
+                this.bdUserBundles.push(currentBrief);
+                console.log(JSON.stringify(this.bdUserBundles));
+            }
         },
-        err => console.log(err)
-    );
+            err => console.log(err)
+        );
         //push each data item onto the obserbvable array
-        this._bdUserService.push(this.bdUserBundles);
+       
+       
     }
     ngOnDestroy() {
         console.log('ngOnDestroy called in secure');
@@ -117,7 +125,13 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         console.log('help.....');
         //TODO
     }
-
+    add(){
+        console.log(this.bdUserBundles.length);
+        let bundle: AppBundle = new AppBundle();
+        bundle.Title = "Title";        
+        this.bdUserBundles.push(bundle);
+        console.log(this.bdUserBundles.length);
+    }
     newBundle() {
         dialogs.prompt({
             title: "New Bundle",
@@ -130,14 +144,14 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
         });
     }
 
-    editBundle(bundle:AppBundle) {
+    editBundle(bundle: AppBundle) {
         utils.openUrl("https://app.bundledocs.com/api/v1/bundles/" + bundle.PartitionKey
-        +"/" + bundle.RowKey +"/download?Bearer=" + localStorage.getItem('accessToken'));
+            + "/" + bundle.RowKey + "/download?Bearer=" + localStorage.getItem('accessToken'));
     }
-    openGmail(){
+    openGmail() {
         utils.openUrl("https://gmail.com/");
     }
-    openManual(){
+    openManual() {
         utils.openUrl("https://app.bundledocs.com/bundledocs-app-user-manual");
     }
 }
@@ -151,7 +165,7 @@ export class MyList {
     bundle: Bundle[];
     constructor() {
         this.bundle = [
-         
+
         ]
     }
 }

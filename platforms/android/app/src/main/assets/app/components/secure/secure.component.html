@@ -20,19 +20,17 @@
         <Button class="myBundleButton" (tap)="newBundle()" text="+ New Bundle"></Button>
         <Button class="myHelpButton" (tap)="help()" text="?"></Button>
     </AbsoluteLayout> -->
-    <Label text="Bundles" class="show-bundles">
+    <Label text="Bundles" class="show-bundles"></Label>
+    <Button class="myHelpButton" (tap)="add()" text="Add"></Button>
 
-    </Label>
-    <RadListView #lstBundles [row]="row"  (loaded)="ngAfterViewInit()" [items]="bdUserBundles" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
-            <ng-template let-item="item">
-                    <StackLayout class="list-group-item">
-                        <AbsoluteLayout>
-                            <Label class="bundle-title" [text]="item.Title"></Label>
-                            <Label class="bundle-code" [text]="item.Code"></Label>
-                            <Button class="editBundleButton" (tap)="editBundle(item)" text="&#9998;"></Button>
-                            <Label class="bundle-date" [text]="item.Created"></Label>
-                        </AbsoluteLayout>
-                    </StackLayout>
-                </ng-template>
+    <RadListView #lstBundles [items]="bdUserBundles" row="1" pullToRefresh="true" (loaded)="ngAfterViewInit()" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
+        <!-- << angular-listview-pull-to-refresh -->
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout orientation="vertical">
+                <Label android:class="show-bundles" [text]="item.Title"></Label>
+            </StackLayout>
+        </ng-template>
     </RadListView>
+
+   <Label text="Bundles" class="show-bundles"></Label>   
 </StackLayout>

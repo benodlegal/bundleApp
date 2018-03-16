@@ -5,6 +5,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class BundledocsUserService {
     
+    push(arg0: any): any {
+        throw new Error("Method not implemented.");
+    }
     constructor(private _http: HttpClient) { }
 
     me() {
