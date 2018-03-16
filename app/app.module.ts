@@ -1,19 +1,22 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
-import { AppRoutingModule } from "./app.routing";
-import { AppComponent } from "./app.component";
-import { AuthService } from "./auth/auth.service"
-import { LoginComponent } from "./components/login/login.component";
-import { RegisterComponent } from "./components/register/register.component";
-import { SecureComponent } from "./components/secure/secure.component";
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './auth/token.interceptor';
 
-import 'nativescript-localstorage';
-import { BundledocsUserService } from "./services/BundledocsApi/BundledocsUserService";
+import { AppRoutingModule } from "./app.routing";
+
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./components/login/login.component";
+import { SecureComponent } from "./components/secure/secure.component";
+
+import { TokenInterceptor } from './interceptors/token.interceptor';
+
+import { AuthService } from "./services/auth.service";
+
+import { BundledocsUserService } from "./services/bundledocs/users.service";
+import { AccessTokenHelper } from "./helpers/accessToken.helper";
 
 @NgModule({
     bootstrap: [
@@ -27,8 +30,7 @@ import { BundledocsUserService } from "./services/BundledocsApi/BundledocsUserSe
     ],
     declarations: [
         AppComponent,
-        LoginComponent,
-        RegisterComponent,
+        LoginComponent,        
         SecureComponent
     ],
     providers: [
@@ -39,7 +41,8 @@ import { BundledocsUserService } from "./services/BundledocsApi/BundledocsUserSe
             useClass: TokenInterceptor,
             multi: true
         },
-        BundledocsUserService
+        BundledocsUserService,
+        AccessTokenHelper
     ],
     schemas: [
         NO_ERRORS_SCHEMA
