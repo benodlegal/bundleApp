@@ -11,7 +11,7 @@ import * as htmlViewModule from "tns-core-modules/ui/html-view";
 import { Router, NavigationExtras } from "@angular/router";
 import { HtmlView } from "tns-core-modules/ui/html-view";
 import { HttpClient } from '@angular/common/http';
-import { BundledocsUserService } from '../../services/BundledocsApi/BundledocsUserService';
+import { BundledocsUserService } from '../../services/bundledocs/users.service';
 import { EventData, Observable } from "data/observable";
 import { View } from "ui/core/view";
 import { SearchBar } from "ui/search-bar";
@@ -22,6 +22,9 @@ import * as observable from "tns-core-modules/data/observable";
 import * as dialogs from "ui/dialogs";
 import * as utils from "utils/utils";
 import { ListViewEventData } from "nativescript-ui-listview";
+
+import { AppBundle } from "../../model/AppBundle";
+import { AppUser } from "../../model/AppUser";
 
 export function showSideDrawer(args: EventData) {
     console.log("Show SideDrawer tapped.");
@@ -44,8 +47,7 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
     public htmlUsersToken: string;
     public bdUser: AppUser;
     private _bdUserBundles: ObservableArray<AppBundle>;
-    public searchPhrase: string;
-    public myList: MyList;
+    public searchPhrase: string;    
 
     get bdUserBundles(): ObservableArray<AppBundle> {
         return this._bdUserBundles;
@@ -153,19 +155,5 @@ export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
     }
     openManual() {
         utils.openUrl("https://app.bundledocs.com/bundledocs-app-user-manual");
-    }
-}
-
-class Bundle {
-    constructor(public id: number, public name: string, public age: number) {
-
-    }
-}
-export class MyList {
-    bundle: Bundle[];
-    constructor() {
-        this.bundle = [
-
-        ]
     }
 }
