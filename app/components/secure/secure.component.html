@@ -1,36 +1,22 @@
 <ActionBar title="Bundledocs">
     <Image src="res://bundlelogo" class="logo"></Image>
-    <ActionItem android.position="popup" [text]="htmlUsersToken" (tap)="openGmail()"></ActionItem>
-    <ActionItem android.position="popup" [nsRouterLink]="['/login']" class="link" text="Home"></ActionItem>
-    <ActionItem android.position="popup" text="Account Settings"></ActionItem>
-    <ActionItem android.position="popup" text="Upgrade & Billing"></ActionItem>
-    <ActionItem android.position="popup" text="Groups & Sharing"></ActionItem>
-    <ActionItem android.position="popup" text="Manual" (tap)="openManual()"></ActionItem>
-    <ActionItem android.position="popup" text="Sign Out" (tap)="logout()"></ActionItem>
+    <ActionItem android.position="popup" [text]="bdUser?.Email" (tap)="emailSupport()"></ActionItem>
+    <ActionItem android.position="popup" text="Download Manual" (tap)="downloadManual()"></ActionItem>
+    <ActionItem android.position="popup" text="Sign out" (tap)="logout()"></ActionItem>
 </ActionBar>
 
 <StackLayout>
-    <!-- <Button [nsRouterLink]="['/secure']" class="link" text="Secure"></Button>
-        <Button [nsRouterLink]="['/login']" class="link" text="Login"></Button>  -->
-    <!-- <HtmlView [html]="htmlAccessToken"></HtmlView>
-    <HtmlView [html]="htmlUsersToken"></HtmlView> -->
     <SearchBar #txtSearchPhrase hint="Search For Bundle" [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
         color="white" textFieldBackgroundColor="lightgray" textFieldHintColor="white"></SearchBar>
-    <!-- <AbsoluteLayout>
-        <Button class="myBundleButton" (tap)="newBundle()" text="+ New Bundle"></Button>
-        <Button class="myHelpButton" (tap)="help()" text="?"></Button>
-    </AbsoluteLayout> -->
-    <Label text="Bundles" class="show-bundles"></Label>
-    <Button class="myHelpButton" (tap)="add()" text="Add"></Button>
-
-    <RadListView #lstBundles [items]="bdUserBundles" row="1" pullToRefresh="true" (loaded)="ngAfterViewInit()" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
+    
+    <RadListView #lstBundles [items]="bdUserBundles" row="1" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
         <!-- << angular-listview-pull-to-refresh -->
         <ng-template tkListItemTemplate let-item="item">
             <StackLayout orientation="vertical">
                 <Label android:class="show-bundles" [text]="item.Title"></Label>
+                <Label android:class="show-bundles" [text]="item.Description"></Label>
+                <Button class="myBundleButton" (tap)="downloadBundle(item)" text="Download" ></Button>
             </StackLayout>
         </ng-template>
     </RadListView>
-
-   <Label text="Bundles" class="show-bundles"></Label>   
 </StackLayout>

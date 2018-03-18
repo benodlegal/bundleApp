@@ -1,159 +1,98 @@
-import { Component, NgZone, ChangeDetectionStrategy, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, OnDestroy, Injectable, Input, Output } from "@angular/core";
-import { ObservableArray } from "tns-core-modules/data/observable-array";
-import { RouterExtensions } from "nativescript-angular/router";
-import { GestureTypes, GestureEventData } from "ui/gestures";
-import * as ApplicationSettings from "application-settings";
+import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from "@angular/core";
 import { WebView, LoadEventData } from "ui/web-view";
-import { ActivatedRoute } from "@angular/router";
-import * as textViewModule from "tns-core-modules/ui/text-view";
-import { Page } from "ui/page";
-import * as htmlViewModule from "tns-core-modules/ui/html-view";
-import { Router, NavigationExtras } from "@angular/router";
-import { HtmlView } from "tns-core-modules/ui/html-view";
-import { HttpClient } from '@angular/common/http';
-import { BundledocsUserService } from '../../services/bundledocs/users.service';
-import { EventData, Observable } from "data/observable";
-import { View } from "ui/core/view";
+import { Router } from "@angular/router";
+
 import { SearchBar } from "ui/search-bar";
-import { SetupItemViewArgs } from "nativescript-angular/directives";
-import * as buttonModule from "tns-core-modules/ui/button";
-import * as bindable from "tns-core-modules/ui/core/bindable";
-import * as observable from "tns-core-modules/data/observable";
-import * as dialogs from "ui/dialogs";
-import * as utils from "utils/utils";
+
+import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { ListViewEventData } from "nativescript-ui-listview";
 
 import { AppBundle } from "../../model/AppBundle";
 import { AppUser } from "../../model/AppUser";
+import { AuthService } from "../../services/auth.service";
+import { BundledocsUserService } from "../../services/bundledocs/users.service";
+import { BundledocsBundlesService } from "../../services/bundledocs/bundles.service";
+import { DownloadHelper } from "../../helpers/download.helper";
 
-export function showSideDrawer(args: EventData) {
-    console.log("Show SideDrawer tapped.");
-    // Show sidedrawer ...
-}
 @Component({
     moduleId: module.id,
     selector: "ns-secure",
-    templateUrl: "secure.component.html",
-    changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: "secure.component.html"
 })
+export class SecureComponent implements OnInit {
+    private _bdUser: AppUser;
 
-@Injectable()
+    private _bdUserEmail: string;
+    get bdUser(): AppUser { return this._bdUser; }
 
-export class SecureComponent implements AfterViewInit, OnInit, OnDestroy {
-    @Input() row;
-    public accessToken: string;
-    public onceLoggedInSrc: string; //TODO
-    public htmlAccessToken: string;
-    public htmlUsersToken: string;
-    public bdUser: AppUser;
+    @ViewChild("txtSearchPhrase")
+    private _txtSearchPhrase: ElementRef;
+
+    private _searchPhrase: string;
+    get searchPhrase(): string { return this._searchPhrase; }
+
     private _bdUserBundles: ObservableArray<AppBundle>;
-    public searchPhrase: string;    
-
     get bdUserBundles(): ObservableArray<AppBundle> {
         return this._bdUserBundles;
     }
 
     public constructor(
-        private _router: RouterExtensions,
-        private _activatedRoute: ActivatedRoute,
-        private cdRef: ChangeDetectorRef,
+        private _changeDetectionRef: ChangeDetectorRef,
+        private _router: Router,
+        private _authService: AuthService,
         private _bdUserService: BundledocsUserService,
-        private _ngZone: NgZone,
-        private _changeDetectionRef: ChangeDetectorRef) {
+        private _bdBundlesService: BundledocsBundlesService,
+
+        private _downloadHelper: DownloadHelper
+    ) {
     }
 
-    public onSubmit(args) {
-        let searchBar = <SearchBar>args.object;
-        alert("You are searching for " + searchBar.text);
-    }
-
-    public onTextChanged(args) {
+    onTextChanged(args) {
         let searchBar = <SearchBar>args.object;
         console.log("SearchBar text changed! New value: " + searchBar.text);
     }
-
-    @ViewChild("txtSearchPhrase") txtSearchPhrase: ElementRef;
-    @ViewChild("lstBundles") lstBundles: ElementRef;
-
-    ngAfterViewInit() {
-        try {
-            console.log('load was called');
-
-            //leave the below
-            let searchPhrase: SearchBar = this.txtSearchPhrase.nativeElement;
-            searchPhrase.text = " ";
-            searchPhrase.text = "";
-        } catch (e) {
-            console.log(JSON.stringify(e));
-        }
-        console.log('accessToken3');
+    
+    onPullToRefreshInitiated($event) {
+        this.initBundles();
     }
 
     ngOnInit() {
-        this.initDataItems();
+        this.initBundles();
         this._changeDetectionRef.detectChanges();
-        console.log('ngOnInit called in secure');
+        console.log('secure.component.ngOnInit');
     }
-    private initDataItems() {
+
+    private initBundles() {
         this._bdUserBundles = new ObservableArray<AppBundle>();
         //subscribe to the data
         this._bdUserService.me().subscribe(response => {
-            this.bdUser = response.data[0];
-            this.htmlUsersToken = response.data[0].Email;
-            for (let i=0; i <= this.bdUser.Briefs.length; i++) {
-                let currentBrief = this.bdUser.Briefs[i];
-                this.bdUserBundles.push(currentBrief);
-                console.log(JSON.stringify(this.bdUserBundles));
+            this._bdUser = response.data[0];
+            this._bdUserEmail = this._bdUser.Email;
+            for (let i = 0; i <= this._bdUser.Briefs.length; i++) {
+                let currentBrief = this._bdUser.Briefs[i];
+                this._bdUserBundles.push(currentBrief);
             }
         },
             err => console.log(err)
         );
         //push each data item onto the obserbvable array
-       
-       
-    }
-    ngOnDestroy() {
-        console.log('ngOnDestroy called in secure');
     }
 
     logout() {
-        // ApplicationSettings.remove("authenticated");
-        // this._router.navigate(["/login"], { clearHistory: true });
-        // localStorage.setItem('accessToken', null);
-        console.log('you clicked logout');
+        this._authService.setAccessToken(null);
+        this._router.navigate(["/"]);
+        console.log('secure.component.logout');
     }
 
-    help() {
-        console.log('help.....');
-        //TODO
-    }
-    add(){
-        console.log(this.bdUserBundles.length);
-        let bundle: AppBundle = new AppBundle();
-        bundle.Title = "Title";        
-        this.bdUserBundles.push(bundle);
-        console.log(this.bdUserBundles.length);
-    }
-    newBundle() {
-        dialogs.prompt({
-            title: "New Bundle",
-            message: "Code(eg. ABC20/1)",
-            cancelButtonText: "Cancel",
-            okButtonText: "Create",
-            neutralButtonText: "Ok"
-        }).then(r => {
-            console.log("Dialog result: " + r.result + ", user: " + r.text);
-        });
+    emailSupport() {
+        this._downloadHelper.Download("mailto:support@bundledocs.com");
     }
 
-    editBundle(bundle: AppBundle) {
-        utils.openUrl("https://app.bundledocs.com/api/v1/bundles/" + bundle.PartitionKey
-            + "/" + bundle.RowKey + "/download?Bearer=" + localStorage.getItem('accessToken'));
+    downloadBundle(bundle: AppBundle) {
+        this._bdBundlesService.download(bundle);
     }
-    openGmail() {
-        utils.openUrl("https://gmail.com/");
-    }
-    openManual() {
-        utils.openUrl("https://app.bundledocs.com/bundledocs-app-user-manual");
+
+    downloadManual() {
+        this._downloadHelper.Download("https://app.bundledocs.com/bundledocs-app-user-manual");
     }
 }

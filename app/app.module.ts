@@ -1,6 +1,11 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { NativeScriptRouterModule, NSModuleFactoryLoader } from "nativescript-angular/router";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+
+import { NgModule, NO_ERRORS_SCHEMA, NgModuleFactoryLoader } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -17,6 +22,8 @@ import { AuthService } from "./services/auth.service";
 
 import { BundledocsUserService } from "./services/bundledocs/users.service";
 import { AccessTokenHelper } from "./helpers/accessToken.helper";
+import { DownloadHelper } from "./helpers/download.helper";
+import { BundledocsBundlesService } from "./services/bundledocs/bundles.service";
 
 @NgModule({
     bootstrap: [
@@ -24,13 +31,22 @@ import { AccessTokenHelper } from "./helpers/accessToken.helper";
     ],
     imports: [
         NativeScriptModule,
+        CommonModule,
+        NativeScriptUIListViewModule,
+        NativeScriptFormsModule,
+        NativeScriptRouterModule,
+
         HttpClientModule,
         NativeScriptFormsModule,
         AppRoutingModule
     ],
+    exports: [
+        NativeScriptModule,
+        NativeScriptRouterModule
+    ],
     declarations: [
         AppComponent,
-        LoginComponent,        
+        LoginComponent,
         SecureComponent
     ],
     providers: [
@@ -42,10 +58,12 @@ import { AccessTokenHelper } from "./helpers/accessToken.helper";
             multi: true
         },
         BundledocsUserService,
-        AccessTokenHelper
+        BundledocsBundlesService,
+        AccessTokenHelper,
+        DownloadHelper
     ],
     schemas: [
         NO_ERRORS_SCHEMA
-    ]
+    ]   
 })
 export class AppModule { }
