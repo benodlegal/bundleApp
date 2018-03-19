@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     //Called at runtime
     ngOnInit() {
         console.log('login.component.ngOnInit');
+        
         //hide the action bar on the login component as it conflicts with the webview
         this._page.actionBarHidden = true;
 

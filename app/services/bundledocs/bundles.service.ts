@@ -20,6 +20,6 @@ export class BundledocsBundlesService {
             /bundles/${appBundle.PartitionKey}/${appBundle.RowKey}\
             /download?Bearer=${accessToken}";
         
-        this._downloadHelper.Download(downloadUrl);
+        this._downloadHelper.download(downloadUrl);
     }
 }

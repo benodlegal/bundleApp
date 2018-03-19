@@ -21,15 +21,17 @@ import { DownloadHelper } from "../../helpers/download.helper";
 })
 export class SecureComponent implements OnInit {
     private _bdUser: AppUser;
-
-    private _bdUserEmail: string;
-    get bdUser(): AppUser { return this._bdUser; }
+    get bdUser(): AppUser {
+        return this._bdUser;
+    }
 
     @ViewChild("txtSearchPhrase")
     private _txtSearchPhrase: ElementRef;
 
     private _searchPhrase: string;
-    get searchPhrase(): string { return this._searchPhrase; }
+    get searchPhrase(): string {
+        return this._searchPhrase;
+    }
 
     private _bdUserBundles: ObservableArray<AppBundle>;
     get bdUserBundles(): ObservableArray<AppBundle> {
@@ -51,7 +53,7 @@ export class SecureComponent implements OnInit {
         let searchBar = <SearchBar>args.object;
         console.log("SearchBar text changed! New value: " + searchBar.text);
     }
-    
+
     onPullToRefreshInitiated($event) {
         this.initBundles();
     }
@@ -67,7 +69,8 @@ export class SecureComponent implements OnInit {
         //subscribe to the data
         this._bdUserService.me().subscribe(response => {
             this._bdUser = response.data[0];
-            this._bdUserEmail = this._bdUser.Email;
+
+            //push each data item onto the obserbvable array
             for (let i = 0; i <= this._bdUser.Briefs.length; i++) {
                 let currentBrief = this._bdUser.Briefs[i];
                 this._bdUserBundles.push(currentBrief);
@@ -75,17 +78,17 @@ export class SecureComponent implements OnInit {
         },
             err => console.log(err)
         );
-        //push each data item onto the obserbvable array
     }
 
     logout() {
+        console.log('secure.component.logout');
+
         this._authService.setAccessToken(null);
         this._router.navigate(["/"]);
-        console.log('secure.component.logout');
     }
 
     emailSupport() {
-        this._downloadHelper.Download("mailto:support@bundledocs.com");
+        this._downloadHelper.download("mailto:support@bundledocs.com");
     }
 
     downloadBundle(bundle: AppBundle) {
@@ -93,6 +96,6 @@ export class SecureComponent implements OnInit {
     }
 
     downloadManual() {
-        this._downloadHelper.Download("https://app.bundledocs.com/bundledocs-app-user-manual");
+        this._downloadHelper.download("https://app.bundledocs.com/bundledocs-app-user-manual");
     }
 }
