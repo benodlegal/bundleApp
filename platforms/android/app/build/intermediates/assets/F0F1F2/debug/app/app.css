@@ -1,0 +1,56 @@
+@import '~nativescript-theme-core/css/core.light.css';
+ActionBar {
+    color: white;
+}
+
+.myBundleButton{
+    margin-right:70%;
+    background-color:#62A5E2;
+    color:white;
+    font-weight: bold;
+    height: 60;
+    width:110;
+}
+
+.show-bundles{
+    font-size: 20em;
+    margin:8;
+    color:black;
+    border: 5em solid;
+}
+
+.logo{
+    margin-top:5;
+    margin-left: 40;
+    margin-right: 5;
+}
+.bundle-title{
+    margin-left:0%;
+    font-weight:bold;
+    margin-top:10;
+}
+
+.bundle-code{
+    margin-left:50%;
+    margin-top:10;
+    font-weight:bold;
+}
+.bundle-date{
+    margin-top:30;
+}
+
+.editBundleButton{
+    margin-left:80%;
+    background-color:#62A5E2;
+    color:white;
+    font-weight: bold;
+    font-size: 20em;
+    height: 45;
+    width:45;
+}
+
+.popup-button{
+margin-left: 5;
+margin-right: 85;
+color: red;
+}

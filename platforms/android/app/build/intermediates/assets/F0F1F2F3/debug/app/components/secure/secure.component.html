@@ -1,0 +1,35 @@
+<ActionBar title="Bundledocs">
+    <ActionItem (tap)="drawerService()">
+        <Button class="sideDrawerButton" text="|||"></Button>
+    </ActionItem>
+
+    <ActionItem android.position="popup" [text]="bdUser?.Email" (tap)="emailSupport()"></ActionItem>
+    <ActionItem android.position="popup" text="Download Manual" (tap)="downloadManual()"></ActionItem>
+    <ActionItem android.position="popup" text="Sign out" (tap)="logout()"></ActionItem>
+    <Image src="res://bundlelogo" position="left" class="logo"></Image>
+    <ActionItem>
+        <Image src="res://search" position="right" class="search">
+
+        </Image>
+    </ActionItem>
+
+</ActionBar>
+
+<StackLayout>
+    <SearchBar #txtSearchPhrase hint="Search For Bundle" [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
+        color="white" textFieldBackgroundColor="lightgray" textFieldHintColor="white" visibility="hidden">
+    </SearchBar>
+
+    <RadListView #lstBundles [items]="bdUserBundles" row="1" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
+        <!-- << angular-listview-pull-to-refresh -->
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout orientation="vertical">
+                <AbsoluteLayout>
+                    <Label class="show-bundles" [text]="item.Title"></Label>
+                    <!-- <Label class="show-bundles" [text]="item.Description"></Label> -->
+                    <Button class="myBundleButton" (tap)="downloadBundle(item)" text="Download"></Button>
+                </AbsoluteLayout>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</StackLayout>

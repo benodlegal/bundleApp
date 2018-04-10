@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-nodpi-v4\\splash_screen.xml",
+        "source": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\src\\main\\res\\drawable-nodpi\\splash_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-nodpi-v4\\splash_screen.xml",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-nodpi\\splash_screen.xml"
+    }
+]
