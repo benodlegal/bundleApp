@@ -53,9 +53,6 @@ ActionBar {
     font-size: 20em;
 }
 
-.listview{
-    
-}
 
 .search{
     height:60;
@@ -108,5 +105,15 @@ button {
 
 .underline{
     text-decoration: underline;
-    margin:5;
+    margin-left:10;
+    margin-top:45;
+    color:black;
+    font-size:14;
+}
+
+.show-code{
+    font-size: 15em;
+    color:black;
+    padding :30 15 30 15;
+    font-style: italic;
 }

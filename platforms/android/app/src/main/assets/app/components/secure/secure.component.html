@@ -37,11 +37,12 @@
                 <StackLayout orientation="vertical">
                     <AbsoluteLayout>
                         <Label class="show-bundles" [text]="item?.Title"></Label>
-                        <!-- <Label class="show-bundles" [text]="item.Description"></Label> -->
+                        <Label class="show-code" [text]="item.Code"></Label> 
                         <Button class="myBundleButton" (tap)="downloadBundle(item)" text="Download"></Button>
-                    </AbsoluteLayout>
-                    <Label class="underline" text="                                                                                                                 ">
+                        <Label class="underline" text="                                                                                                                 ">
                     </Label>
+                    </AbsoluteLayout>
+                    
                 </StackLayout>
             </ng-template>
         </RadListView>
