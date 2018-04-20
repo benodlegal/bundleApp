@@ -21,8 +21,7 @@ import { RadSideDrawerComponent, SideDrawerType } from "nativescript-ui-sidedraw
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { Observable } from "tns-core-modules/ui/page/page";
 import { TnsSideDrawer } from 'nativescript-sidedrawer'
-
-
+import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout/stack-layout";
 
 @Component({
     moduleId: module.id,
@@ -34,12 +33,21 @@ export class SecureComponent implements OnInit {
     private _bdUser: AppUser;
     private _mainContentText: string;
 
+    //gets the bundledocs user info and returns it. Go to definition to see class
     get bdUser(): AppUser {
-        return this._bdUser;
+        return this._bdUser; 
     }
 
+    //important for defining whether the search bar is visible or hidden
+    //sets a private variable that will be used to determine outcome in the onClickSearch() class
     @ViewChild("txtSearchPhrase")
     private _txtSearchPhrase: ElementRef;
+
+    //similar to above, this is used to decide whether the margin of the list view should be set.
+    //when the search bar is visible, the list view needs to be pushed down, and when it goes away, 
+    //it needs to be put back in the right place
+    @ViewChild("lstBundles")
+    private _lstBundles:ElementRef;
 
     //string that is entered in the searchbar 
     private _searchPhrase: string;
@@ -47,6 +55,7 @@ export class SecureComponent implements OnInit {
         return this._searchPhrase;
     }
 
+    //observable array that is used for holding the user bundles 
     private _bdUserBundles: ObservableArray<AppBundle>;
     get bdUserBundles(): ObservableArray<AppBundle> {
         return this._bdUserBundles;
@@ -54,13 +63,14 @@ export class SecureComponent implements OnInit {
 
     public constructor(
         private _changeDetectionRef: ChangeDetectorRef,
-        private _router: Router,
-        private _authService: AuthService,
-        private _bdUserService: BundledocsUserService,
+        private _router: Router, //angular routing used to change between routes/classes
+        private _authService: AuthService, //used for user authentication
+        private _bdUserService: BundledocsUserService, 
         private _bdBundlesService: BundledocsBundlesService,
         private _downloadHelper: DownloadHelper
     ) { }
 
+    //This is used for the side drawer
     @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;
 
@@ -71,6 +81,7 @@ export class SecureComponent implements OnInit {
     }
 
     //this class decides whether to display the searchbar or not, 1 or 0
+    //also used to push the listview down to accomodate for the searchbar when visible
     onClickSearch() {
         this.count++;
         console.log(this.count);
@@ -78,9 +89,11 @@ export class SecureComponent implements OnInit {
             (<SearchBar>this._txtSearchPhrase.nativeElement).visibility = "visible";
             this.count--;
             this.count--;
+            (<RadListView>this._lstBundles.nativeElement).marginTop = 50;
         }
         else if (this.count == 0) {
             (<SearchBar>this._txtSearchPhrase.nativeElement).visibility = "hidden";
+            (<RadListView>this._lstBundles.nativeElement).marginTop = 0;
         }
     }
 
@@ -91,7 +104,7 @@ export class SecureComponent implements OnInit {
         listView.notifyPullToRefreshFinished();
     }
 
-    //all these actions happen once initialised
+    //all these actions happen once class is initialised (once logged in)
     ngOnInit() {
         this.initBundles();
         this._changeDetectionRef.detectChanges();
@@ -153,14 +166,18 @@ export class SecureComponent implements OnInit {
         this._router.navigate(["/"]);
     }
 
+    //opens up compose message to support@legalit from whatever 
+    //account you have signed in on your device
     emailSupport() {
         this._downloadHelper.download("mailto:support@bundledocs.com");
     }
 
+    //downloads whatever bundle is clicked 
     downloadBundle(bundle: AppBundle) {
         this._bdBundlesService.download(bundle);
     }
 
+    //downloads the user manual describing bundledocs
     downloadManual() {
         this._downloadHelper.download("https://app.bundledocs.com/bundledocs-app-user-manual");
     }

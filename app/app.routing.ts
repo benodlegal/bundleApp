@@ -7,6 +7,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { SecureComponent } from "./components/secure/secure.component";
 import { Component } from "@angular/core/src/metadata/directives";
 
+//any paths you wish to route to must be entered in here 
 const routes: Routes = [
     { path: "", redirectTo: "/login", pathMatch: "full" },
     { path: "login", component: LoginComponent },

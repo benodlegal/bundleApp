@@ -11,6 +11,7 @@ export class BundledocsUserService {
     }
     constructor(private _http: HttpClient) { }
 
+    //gets you the individual users details from the API
     me() {
         return this._http.get<AppResponseUser>("https://app.bundledocs.com/api/v1/users/me");
     }

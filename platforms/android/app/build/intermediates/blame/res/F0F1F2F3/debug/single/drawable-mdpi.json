@@ -32,6 +32,10 @@
         "source": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\bundlelogo.png"
     },
     {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-mdpi\\background.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\background.png"
+    },
+    {
         "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-mdpi\\logo.png",
         "source": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\logo.png"
     },
@@ -46,5 +50,9 @@
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-mdpi\\logo.png",
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-mdpi\\blogo.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\blogo.png"
     }
 ]

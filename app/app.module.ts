@@ -1,3 +1,4 @@
+//important class used to import everything such as routing, sideDrawer etc..
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";

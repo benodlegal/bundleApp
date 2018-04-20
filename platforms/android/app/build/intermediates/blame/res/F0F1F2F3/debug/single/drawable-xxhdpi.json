@@ -36,6 +36,10 @@
         "source": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\src\\main\\res\\drawable-xxhdpi\\icon.png"
     },
     {
+        "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-xxhdpi\\blogo.png",
+        "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-xxhdpi\\blogo.png"
+    },
+    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\drawable-xxhdpi\\logo.png",
         "source": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\src\\main\\res\\drawable-xxhdpi\\logo.png"
     },

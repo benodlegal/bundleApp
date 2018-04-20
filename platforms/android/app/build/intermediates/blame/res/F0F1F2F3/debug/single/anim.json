@@ -8,12 +8,12 @@
         "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\anim\\design_snackbar_in.xml",
         "source": "C:\\Users\\bodonnell\\.android\\build-cache\\a52ba51b3fb5cb5e2c8ad97356acc06f130a25aa\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\9a9497efd3252b6d32165ef6707d74ca1a349ffb\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\anim\\design_bottom_sheet_slide_in.xml",

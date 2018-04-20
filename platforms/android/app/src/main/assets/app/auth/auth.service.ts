@@ -13,11 +13,13 @@ export class AuthService {
     // retry the requests. this method can
     // be called after the token is refreshed
   }
+
+  //this class is used so that access token is in local storage
   public getToken(): string {
-    console.log('your access token is now in local storage ' + localStorage.getItem('accessToken'));
     return localStorage.getItem('accessToken');
   }
 
+  //checks if the access token is authenticated, returns true if so
   public isAuthenticated(): boolean {
     //  get the token
     const accessToken = this.getToken();

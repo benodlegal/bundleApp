@@ -1,9 +1,9 @@
 {
-	"time": "Fri Apr 20 2018 09:14:10 GMT+0100 (GMT Daylight Time)",
+	"time": "Fri Apr 20 2018 16:13:30 GMT+0100 (GMT Daylight Time)",
 	"nativePlatformStatus": "3",
 	"bundle": false,
 	"release": false,
-	"changesRequireBuild": false,
+	"changesRequireBuild": true,
 	"projectFileHash": "b031d8a1a34ea61d73f1135a4fe6656444a87495b5a0481036888191fa1d6dd3",
-	"changesRequireBuildTime": "Tue Apr 03 2018 09:29:59 GMT+0100 (GMT Daylight Time)"
+	"changesRequireBuildTime": "Fri Apr 20 2018 16:13:30 GMT+0100 (GMT Daylight Time)"
 }

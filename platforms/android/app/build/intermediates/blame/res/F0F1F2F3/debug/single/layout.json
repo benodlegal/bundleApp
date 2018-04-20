@@ -1,7 +1,7 @@
 [
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\on_demand_automatic.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\b2fd67ae444c94c590c85e5a700228ff2278a348\\output\\res\\layout\\on_demand_automatic.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\40e82e96e343be6aadbd9100458a695e07f5adf9\\output\\res\\layout\\on_demand_automatic.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\material_drawer_item_expandable.xml",
@@ -117,7 +117,7 @@
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\on_demand_manual.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\b2fd67ae444c94c590c85e5a700228ff2278a348\\output\\res\\layout\\on_demand_manual.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\40e82e96e343be6aadbd9100458a695e07f5adf9\\output\\res\\layout\\on_demand_manual.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\design_layout_tab_text.xml",
@@ -269,7 +269,7 @@
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\simple_list_item.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\b2fd67ae444c94c590c85e5a700228ff2278a348\\output\\res\\layout\\simple_list_item.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\40e82e96e343be6aadbd9100458a695e07f5adf9\\output\\res\\layout\\simple_list_item.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp-master\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\abc_alert_dialog_title_material.xml",
@@ -321,7 +321,7 @@
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\simple_group_header_item.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\b2fd67ae444c94c590c85e5a700228ff2278a348\\output\\res\\layout\\simple_group_header_item.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\40e82e96e343be6aadbd9100458a695e07f5adf9\\output\\res\\layout\\simple_group_header_item.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\design_navigation_item.xml",
@@ -349,7 +349,7 @@
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\drawer_blur_fade_layer.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\0f84628f47b435d8dd3477b1d04ce8278851458b\\output\\res\\layout\\drawer_blur_fade_layer.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\59a889e9a05da74724abf965c45a74dde0370abb\\output\\res\\layout\\drawer_blur_fade_layer.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\material_drawer_item_profile_setting.xml",
@@ -417,7 +417,7 @@
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\navigation_item_view.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\0f84628f47b435d8dd3477b1d04ce8278851458b\\output\\res\\layout\\navigation_item_view.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\59a889e9a05da74724abf965c45a74dde0370abb\\output\\res\\layout\\navigation_item_view.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\design_navigation_menu_item.xml",
@@ -609,11 +609,11 @@
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\navigation_drawer_content.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\0f84628f47b435d8dd3477b1d04ce8278851458b\\output\\res\\layout\\navigation_drawer_content.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\59a889e9a05da74724abf965c45a74dde0370abb\\output\\res\\layout\\navigation_drawer_content.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\simple_empty_content.xml",
-        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\b2fd67ae444c94c590c85e5a700228ff2278a348\\output\\res\\layout\\simple_empty_content.xml"
+        "source": "C:\\Users\\bodonnell\\.android\\build-cache\\40e82e96e343be6aadbd9100458a695e07f5adf9\\output\\res\\layout\\simple_empty_content.xml"
     },
     {
         "merged": "C:\\Users\\bodonnell\\bundleApp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\F0F1F2F3\\debug\\layout\\material_drawer_item_secondary_switch.xml",

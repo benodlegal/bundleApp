@@ -3,57 +3,57 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\bodonnell\.android\build-cache\e5643a4039a779ea1254e0d3f335387aff4beb9f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="27.0.3"
-        sha1="9b5a7bd266567dc83b7f0dd42fc36b08bed3ac19">
-        <dex dex="C:\Users\bodonnell\bundleApp-master\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_e181e2b77622886de6f3e37bfbd59870217b7139.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bodonnell\.android\build-cache\8848ba4a44678a10a136e55b5267eca5a63dfa6c\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="27.0.3"
-        sha1="746274223beb11b1cda7854d7eec3038695c2c93">
-        <dex dex="C:\Users\bodonnell\bundleApp-master\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_1fbed10b6354c8ee5712574c0f058689abf99a0d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bodonnell\.android\build-cache\62c77c06b702b86844a0be9a94791d9f26110546\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="27.0.3"
-        sha1="83f711d70ef9ce041ead02bc16e944130c58d05a">
-        <dex dex="C:\Users\bodonnell\bundleApp-master\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_2a9e415744a52e9352a70669932b35297f5aa53c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bodonnell\.android\build-cache\803758b6ceac2c1918dd82d38e95ec68cc5ecdda\output\jars\classes.jar"
+        jar="C:\Users\bodonnell\.android\build-cache\59a889e9a05da74724abf965c45a74dde0370abb\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
         sha1="c5d9ca53bf371b1420e4a8d4a18f293a6833b51d">
-        <dex dex="C:\Users\bodonnell\bundleApp-master\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_3ac9ed0df86fc013d1bfe17772818eb301043b2f.jar" />
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_eeb230df35173bf0831ec15dfdd9f09f9c1edde9.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\bodonnell\.android\build-cache\7751c8d16c5c216a1817fe08057b67b6fc59d7dd\output\jars\classes.jar"
+        jar="C:\Users\bodonnell\.android\build-cache\40e82e96e343be6aadbd9100458a695e07f5adf9\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="dd431d6aa9ce9dc0d429fcd239d412a82ea0e9a7">
-        <dex dex="C:\Users\bodonnell\bundleApp-master\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_41dc4df79d532fe1ea60ea633474f7f8e1023e65.jar" />
+        sha1="9b5a7bd266567dc83b7f0dd42fc36b08bed3ac19">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_9769327a5d9786c6782717a19da2a2b75dcf7024.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\bodonnell\bundleApp-master\node_modules\nativescript-webview-interface\platforms\android\WebViewInterface.jar"
+        jar="C:\Users\bodonnell\.android\build-cache\5c160d0c002ff4e59eebfdb0660850033c592b6f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="746274223beb11b1cda7854d7eec3038695c2c93">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_701ddec5a546249f3c577ede0d5608ce8c4213b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bodonnell\bundleApp\node_modules\nativescript-webview-interface\platforms\android\WebViewInterface.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
         sha1="76c82949e18be2e64a13fcf1587898f426846790">
-        <dex dex="C:\Users\bodonnell\bundleApp-master\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\WebViewInterface_2bc0c2aa7026f07c1ed75628411bb99b6d9898c9.jar" />
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\WebViewInterface_eecba86f45899cac8c4a17bcc932ee6684ebf054.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bodonnell\.android\build-cache\611e87b0c730c7f4ba96956bd3e0d3557c69ec13\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="dd431d6aa9ce9dc0d429fcd239d412a82ea0e9a7">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_2f06559398b4b1430f75735827832a4cf5cbb42b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bodonnell\.android\build-cache\b8d32a143bcb012f1ea47a51178b11fbcec1533e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="83f711d70ef9ce041ead02bc16e944130c58d05a">
+        <dex dex="C:\Users\bodonnell\bundleApp\platforms\android\app\build\intermediates\pre-dexed\F0F1F2F3\debug\classes_ecd60ff53f40376a730b325b0fe9dcb441cff25d.jar" />
     </item>
 
 </items>
