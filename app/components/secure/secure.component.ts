@@ -1,3 +1,4 @@
+//high priority class, most components exist in this class
 import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from "@angular/core";
 import { WebView, LoadEventData } from "ui/web-view";
 import { Router } from "@angular/router";
@@ -19,9 +20,8 @@ import { ActionItem } from "ui/action-bar";
 import { RadSideDrawerComponent, SideDrawerType } from "nativescript-ui-sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { Observable } from "tns-core-modules/ui/page/page";
-
 import { TnsSideDrawer } from 'nativescript-sidedrawer'
-import { SideDrawerComponent } from "../../components/sideDrawer/drawer.component"
+
 
 
 @Component({
@@ -30,7 +30,7 @@ import { SideDrawerComponent } from "../../components/sideDrawer/drawer.componen
     templateUrl: "secure.component.html"
 })
 export class SecureComponent implements OnInit {
-    public count: number=0;
+    public count: number = 0; //used to decide whether the searchbar is visible or hidden
     private _bdUser: AppUser;
     private _mainContentText: string;
 
@@ -41,6 +41,7 @@ export class SecureComponent implements OnInit {
     @ViewChild("txtSearchPhrase")
     private _txtSearchPhrase: ElementRef;
 
+    //string that is entered in the searchbar 
     private _searchPhrase: string;
     get searchPhrase(): string {
         return this._searchPhrase;
@@ -58,16 +59,18 @@ export class SecureComponent implements OnInit {
         private _bdUserService: BundledocsUserService,
         private _bdBundlesService: BundledocsBundlesService,
         private _downloadHelper: DownloadHelper
-    ) {}
+    ) { }
 
     @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;
 
+    //updates real time on the console 
     onTextChanged(args) {
         let searchBar = <SearchBar>args.object;
         console.log("SearchBar text changed! New value: " + searchBar.text);
     }
 
+    //this class decides whether to display the searchbar or not, 1 or 0
     onClickSearch() {
         this.count++;
         console.log(this.count);
@@ -76,17 +79,19 @@ export class SecureComponent implements OnInit {
             this.count--;
             this.count--;
         }
-        else if(this.count == 0){
+        else if (this.count == 0) {
             (<SearchBar>this._txtSearchPhrase.nativeElement).visibility = "hidden";
         }
     }
 
+    //refreshing the listview
     onPullToRefreshInitiated(args: ListViewEventData) {
         this.initBundles();
         let listView: RadListView = args.object;
         listView.notifyPullToRefreshFinished();
     }
 
+    //all these actions happen once initialised
     ngOnInit() {
         this.initBundles();
         this._changeDetectionRef.detectChanges();
@@ -103,12 +108,25 @@ export class SecureComponent implements OnInit {
         this._mainContentText = value;
     }
 
+    //class used for opening and displaying the side drawer 
+    //count is used once again for the purpose of deciding
+    //whether the drawer is opened or closed
     public openDrawer() {
         this.drawer.showDrawer();
+        this.count++;
+        console.log(this.count);
+        if (this.count == 1) {
+            this.count--;
+            this.count--;
+        }
+        else if (this.count == 0) {
+            this.onCloseDrawerTap();
+        }
     }
 
+    //called once count is 0
     public onCloseDrawerTap() {
-       this.drawer.closeDrawer();
+        this.drawer.closeDrawer();
     }
 
     private initBundles() {
@@ -127,6 +145,7 @@ export class SecureComponent implements OnInit {
         );
     }
 
+    //TODO, not fully functioal yet 
     logout() {
         console.log('secure.component.logout');
 
@@ -146,7 +165,4 @@ export class SecureComponent implements OnInit {
         this._downloadHelper.download("https://app.bundledocs.com/bundledocs-app-user-manual");
     }
 
-    drawerService() {
-        this._router.navigate(["/sideDrawer"]);
-    }
 }

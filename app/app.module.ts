@@ -17,7 +17,6 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SecureComponent } from "./components/secure/secure.component";
-import {SideDrawerComponent} from "./components/sideDrawer/drawer.component"
 
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
@@ -51,8 +50,7 @@ import { BundledocsBundlesService } from "./services/bundledocs/bundles.service"
     declarations: [
         AppComponent,
         LoginComponent,
-        SecureComponent,
-        SideDrawerComponent
+        SecureComponent
     ],
     providers: [
         HttpClientModule,

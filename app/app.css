@@ -79,7 +79,7 @@ button {
 }
 
 .sideStackLayout {
-    background-color: gray;
+    background-color: white;
     font-size:20;
 }
 
@@ -88,15 +88,23 @@ button {
     font-size:20;
     text-align: center;
     vertical-align: center;
+    color:black;
 }
 
 .sideLabel {
     font-size:20;
     padding: 10;
+    color:black;
+}
+.sideLabel2 {
+    font-size:20;
+    padding: 10;
+    color:#62A5E2;
 }
 
+
 .sideLightGrayLabel {
-    background-color: lightgray;
+    background-color: white;
 }
 
 .hamburgerIcon{

@@ -3,7 +3,6 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 import * as webViewModule from "tns-core-modules/ui/web-view";
 
-import {SideDrawerComponent} from "./components/sideDrawer/drawer.component"
 import { LoginComponent } from "./components/login/login.component";
 import { SecureComponent } from "./components/secure/secure.component";
 import { Component } from "@angular/core/src/metadata/directives";
@@ -12,7 +11,6 @@ const routes: Routes = [
     { path: "", redirectTo: "/login", pathMatch: "full" },
     { path: "login", component: LoginComponent },
     { path: "secure", component: SecureComponent },
-    { path: "sideDrawer", component: SideDrawerComponent}
 ];
 
 @NgModule({

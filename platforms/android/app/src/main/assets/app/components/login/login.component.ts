@@ -13,12 +13,12 @@ import { AccessTokenHelper } from "../../helpers/accessToken.helper";
     templateUrl: "login.component.html",
 })
 //login component class that implements the 'AfterViewInit' import
-export class LoginComponent implements OnInit {    
+export class LoginComponent implements OnInit {
     //web view url
     private _authenticationUrl: string = "https://app.bundledocs.com/auth/oauth2/authorize?response_type=token&client_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJTaWduYXR1cmUiOiIwYzE0ZmY0ZmU0ZGU0YTc5ODAxOTQ4OTMxMzIzYzIyYiIsIlBhcnRpdGlvbktleSI6IjEyNTE5OTcyMTQyMDYxNzk1MjgwXzUxNDU1M2Q0LWIxMzItNGU3OC1iZWExLWQyMjkwNjNjODNjNSIsIlJvd0tleSI6IjEyNTE4ODY1NTI1Mjc5NDc0OTM0Xzk1NzMzMmIwLWY2MjctNDRjYy1iMDk3LTM2NDhmNWRiNmYwYyJ9.qYi227w3Bbxpat7tppYdnF8rHbMX2c7ILMeidb9kdIo&redirect_uri=https://app.bundledocs.com/auth/oauth2/approval&state=Bundledocs.Android";
     get authenticationUrl(): string { return this._authenticationUrl; }
 
-    @ViewChild("webView") 
+    @ViewChild("webView")
     private _webViewRef: ElementRef;
 
     //constructor for the Router
@@ -34,14 +34,14 @@ export class LoginComponent implements OnInit {
     //Called at runtime
     ngOnInit() {
         console.log('login.component.ngOnInit');
-        
+
         //hide the action bar on the login component as it conflicts with the webview
         this._page.actionBarHidden = true;
 
         const webview: WebView = this._webViewRef.nativeElement;
         const ngZone: NgZone = this._ngZone;
-        const router: Router = this._router;    
-        const authService: AuthService = this._authService;        
+        const router: Router = this._router;
+        const authService: AuthService = this._authService;
         const accessTokenHelper: AccessTokenHelper = this._accessTokenHelper;
 
         //this gets called when the webview is loaded

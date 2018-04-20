@@ -23,9 +23,8 @@
         <StackLayout class="sideStackLayout">
             <Label [text]="bdUser?.Email" (tap)="emailSupport()" class="sideLabel"></Label>
             <Label text="Download Manual" (tap)="downloadManual()" class="sideLabel"></Label>
-            <Label text="Sign out" (tap)="logout()" class="sideLabel"></Label>
+            <Label text="Sign out" (tap)="logout()" class="sideLabel2"></Label>
         </StackLayout>
-        <Label text="Close Drawer" color="lightgray" padding="10" (tap)="onCloseDrawerTap()"></Label> -->
     </StackLayout>
     <StackLayout tkMainContent>
         <SearchBar #txtSearchPhrase hint="Search For Bundle" [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
@@ -37,12 +36,12 @@
                 <StackLayout orientation="vertical">
                     <AbsoluteLayout>
                         <Label class="show-bundles" [text]="item?.Title"></Label>
-                        <Label class="show-code" [text]="item.Code"></Label> 
+                        <Label class="show-code" [text]="item.Code"></Label>
                         <Button class="myBundleButton" (tap)="downloadBundle(item)" text="Download"></Button>
                         <Label class="underline" text="                                                                                                                 ">
-                    </Label>
+                        </Label>
                     </AbsoluteLayout>
-                    
+
                 </StackLayout>
             </ng-template>
         </RadListView>
